@@ -54,17 +54,8 @@
                 <span class="menu-title">Settings</span>
             </a>
         </li>
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{route('contact.index')}}">--}}
-{{--                <i class="mdi mdi-contacts menu-icon"></i>--}}
-{{--                <span class="menu-title">Contact Us</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-
-
-
     </ul>
+
 
 
     <div class="mt-3 space-y-1 nav-item">

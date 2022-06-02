@@ -31,6 +31,7 @@ class UserController extends Controller
         $data = request()->only(['name','email']);
 
         User::where('id', $id)->update($data);
+
         return redirect()->route('user.index');
     }
 
@@ -43,7 +44,11 @@ class UserController extends Controller
     public function save(Request $request)
     {
         $data=request()->only(['name','email','password']);
+
+        $data['password'] = bcrypt(request()->password);
+
         User::create($data);
+
         return redirect()->route('user.index');
     }
 

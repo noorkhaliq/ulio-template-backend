@@ -237,9 +237,19 @@ CREATE TABLE `settings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `settings` */
+
+insert  into `settings`(`id`,`title`,`image`,`link`,`type`,`created_at`,`updated_at`) values 
+(1,'facebook','1654150417.png','http://facebook.com','social','2022-06-02 06:13:37','2022-06-02 06:13:37'),
+(2,'instagram','1654150435.png','http://instagram.com','social','2022-06-02 06:13:55','2022-06-02 06:13:55'),
+(3,'Linkindin','1654150455.png','http://linkindin.com','social','2022-06-02 06:14:16','2022-06-02 06:14:16'),
+(4,'Twitter','1654150482.png','http://twitter.com','social','2022-06-02 06:14:43','2022-06-02 06:14:43'),
+(5,'Youtube','1654150504.png','http://youtube.com','social','2022-06-02 06:15:04','2022-06-02 06:15:04'),
+(6,'Call Now     +01 123467890','1654150545.png','http://twitter.com','address','2022-06-02 06:15:45','2022-06-02 06:15:45'),
+(7,'Location','1654150566.png','http://linkindin.com','address','2022-06-02 06:16:06','2022-06-02 06:16:06'),
+(8,'demo@gmail.com','1654150591.png','http://facebook.com','address','2022-06-02 06:16:31','2022-06-02 06:16:31');
 
 /*Table structure for table `slider` */
 

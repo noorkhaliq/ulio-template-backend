@@ -62,19 +62,19 @@
 
             })
 
-            $('body').on('click', '.blogsDelete', function(e){
-                if (confirm("Are you sure?")) {
-                    var data = $(this).val();
-                    $.post('requests/seminars.php', {delete_sem: data}, function(data) {
-                        if (data == "delete") {
-                            location.reload();
-                        }else{
-                            alert(data);
-                        };
 
-                    });
+            $('body').on('click', '.aboutDelete', function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                if (confirm("Are you sure ?")) {
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+                        success: function() {
+                            table.ajax.reload();
+                        }
+                    })
                 }
-
             });
 
 

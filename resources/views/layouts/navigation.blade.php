@@ -54,6 +54,13 @@
                 <span class="menu-title">Settings</span>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('contactus.index')}}">
+                <i class="mdi mdi-contact-mail menu-icon"></i>
+                <span class="menu-title">Contactus</span>
+            </a>
+        </li>
     </ul>
 
 

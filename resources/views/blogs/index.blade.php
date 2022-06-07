@@ -10,7 +10,7 @@
                             <h4 class="card-title d-block" style="float:left;display: block">Blogs List</h4>
                             <a href="{{route('blogs.create')}}" class="btn btn-primary mb-5" style="float: right" >&plus;</a>
 
-                            <div class="table-responsive overflow-hidden" style="margin-top: 5rem;width: 100%;">
+                            <div class="table-responsive" style="margin-top: 5rem;width: 100%;">
                                 <table id="userDataTable" class="table table-striped">
                                     <thead>
                                     <tr>
@@ -62,24 +62,20 @@
 
             })
 
-            $('body').on('click', '.blogsDelete', function(e){
-                if (confirm("Are you sure?")) {
-                    var data = $(this).val();
-                    $.post('requests/seminars.php', {delete_sem: data}, function(data) {
-                        if (data == "delete") {
-                            location.reload();
-                        }else{
-                            alert(data);
-                        };
 
-                    });
+            $('body').on('click', '.blogsDelete', function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                if (confirm("Are you sure ?")) {
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+                        success: function() {
+                            table.ajax.reload();
+                        }
+                    })
                 }
-
             });
-
-
-
-
         });
     </script>
 

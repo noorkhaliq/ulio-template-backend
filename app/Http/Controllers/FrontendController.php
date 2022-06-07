@@ -12,6 +12,7 @@ use App\Models\Slider;
 use App\Models\Services;
 use App\Models\Social;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -66,6 +67,32 @@ class FrontendController extends Controller
     public function contact()
     {
         return view('frontend.contact');
+    }
+
+    function save
+    (Request $request)
+    {
+        $validator = \Illuminate\Support\Facades\Validator::make($request->all(),[
+            'name'=>'required|min:3',
+            'phone'=>'required|min:3',
+            'message'=>'required|min:3',
+            'email' => 'required'
+        ]);
+
+        if(!$validator->passes()){
+            return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
+        }else{
+            $values = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'message' => $request->message,
+            ];
+            $query = DB::table('contactus')->insert($values);
+            if( $query ){
+                return response()->json(['status'=>1, 'msg'=>'New Contact has been successfully registered']);
+            }
+        }
     }
 
     public function blog()

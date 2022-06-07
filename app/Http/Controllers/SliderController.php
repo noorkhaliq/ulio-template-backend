@@ -57,7 +57,7 @@ class SliderController extends Controller
             })
             ->addColumn('actions', function ($q) {
                 return '<a class="btn btn-github" href="'.route('slider.edit',$q->id).'">Edit</a>
-                         <a class="btn btn-reddit deleteslider" href="'.route('slider.delete',$q->id).'">Delete</a> ';
+                         <a class="btn btn-reddit deleteSlider" href="'.route('slider.delete',$q->id).'">Delete</a> ';
             })
             ->rawColumns(['actions'])
             ->make(true);

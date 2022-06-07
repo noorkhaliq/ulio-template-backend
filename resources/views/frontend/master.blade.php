@@ -27,9 +27,7 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('front')}}/css/style.css" rel="stylesheet"/>
     <link href="{{asset('front')}}/css/responsive.css" rel="stylesheet"/>
-    <!-- responsive style -->
-    <!--  <link href="css/responsive.css" rel="stylesheet"/>-->
-
+    <script src="{{ asset('jquery-3.5.0.min.js') }}"></script>
 </head>
 <body>
 @inject('frontControllerObject' ,'\App\Http\Controllers\FrontendController' )
@@ -80,15 +78,13 @@
                                     Privacy
                                 </a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('front.contact')}}">
+                                   Contact us
+                                </a>
+                            </li>
                         </ul>
-{{--                        <div class="user_option">--}}
-{{--                            <a href="">--}}
-{{--                                <img src="{{asset('front')}}/images/user.png" alt="">--}}
-{{--                            </a>--}}
-{{--                            <form class="form-inline my-2 my-lg-0 ml-0">--}}
-{{--                                <button value="text" class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </nav>
@@ -135,7 +131,8 @@
     </div>
 </section>
 <!-- footer section -->
-
+<script src="{{ asset('/assets/js/notify.min.js') }}"></script>
+<script src="{{ asset('main.js') }}"></script>
 </body>
 
 </html>
